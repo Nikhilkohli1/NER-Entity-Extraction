@@ -21,7 +21,7 @@ def open_browser(alt_user_name = 'Thank you for your website'):
 
 #url = 'https://seekingalpha.com/article/4390476-ford-motor-company-f-management-presents-barclays-2020-global-automotive-conference'
 def scrape_earnings(url):
-	path = 'chromedriver.exe'
+	path = '/usr/bin/chromedriver'
 	alt_user_name = 'Nikhil Kohli'
 
 	chrome_options = webdriver.ChromeOptions()
