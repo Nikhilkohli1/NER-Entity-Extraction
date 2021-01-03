@@ -9,7 +9,7 @@ import re
 from selenium.webdriver.chrome.options import Options
 import time
 
-region = 'us-east-1'
+region = ''
 s3_client = boto3.resource('s3', region_name = region)
 
 
@@ -19,10 +19,10 @@ def open_browser(alt_user_name = 'Thank you for your website'):
     path = 'chromedriver.exe'
     return webdriver.Chrome(executable_path = path, options=opts)
 
-#url = 'https://seekingalpha.com/article/4390476-ford-motor-company-f-management-presents-barclays-2020-global-automotive-conference'
+
 def scrape_earnings(url):
 	path = '/usr/bin/chromedriver'
-	alt_user_name = 'Nikhil Kohli'
+	alt_user_name = ''
 
 	chrome_options = webdriver.ChromeOptions()
 	chrome_options.add_argument('--headless')

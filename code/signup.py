@@ -5,8 +5,8 @@ import hashlib
 import base64
 import json
 
-USER_POOL_ID = 'us-east-1_4LyZzkFb9'
-CLIENT_ID = '68ko3jles6b1e78c71pg56tl21'
+USER_POOL_ID = ''
+CLIENT_ID = ''
 
 client = boto3.client('cognito-idp')
 sign = False

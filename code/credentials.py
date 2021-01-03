@@ -4,11 +4,11 @@ from datetime import datetime, timedelta
 
 
 
-user_pool_id= 'us-east-1_4LyZzkFb9'
-app_client_id= "68ko3jles6b1e78c71pg56tl21"
+user_pool_id= ''
+app_client_id= ""
 
 client = boto3.client('cognito-idp')
-region = 'us-east-1'
+region = ''
 dynamodb_client = boto3.client('dynamodb', region_name = region)
 user_pl_id= user_pool_id
 app_cli_id= app_client_id

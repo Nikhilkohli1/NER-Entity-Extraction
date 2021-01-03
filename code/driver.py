@@ -24,8 +24,8 @@ def perform_scrape(event=None, context=None):
     chrome_options.add_argument('--ignore-certificate-errors')
     
     driver = webdriver.Chrome(chrome_options=chrome_options,executable_path='chromedriver.exe')
-    url='https://seekingalpha.com/article/4390476-ford-motor-company-f-management-presents-barclays-2020-global-automotive-conference'
-    region = 'us-east-1'
+    url=''
+    region = ''
     s3_client = boto3.resource('s3', region_name = region)
     file_ = crawl_site(url,driver)
     response = s3_client.Object('ner-recognized-entites','scraper_output/{}'.format(file_)).upload_file(Filename=str(file_))

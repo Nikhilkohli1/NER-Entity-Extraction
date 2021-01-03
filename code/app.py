@@ -3,9 +3,6 @@ import requests
 import boto3
 import json
 from scrape import scrape_transcripts
-#from extract_entities import get_entities
-#from maskanm import mask_deidentify_entities, store_deidentified_entities
-#from reidentify import re_identify_entities
 from load_css import local_css
 from credentials import authorize_user
 from signup import signup_user
@@ -19,11 +16,11 @@ from datetime import datetime
 
 
 st.title('Named Entity Recognition for Earnings Transcript')
-region = 'us-east-1'
+region = ''
 client_sf = boto3.client('stepfunctions')
 s3_client = boto3.client('s3', region_name = region)
-TableName = "NERUserTokens"
-TableName_ = "NERUserFileInfo"
+TableName = ""
+TableName_ = ""
 dynamodb = boto3.resource('dynamodb', region_name=region)
 table = dynamodb.Table(TableName)
 table_ = dynamodb.Table(TableName_)
@@ -207,7 +204,7 @@ if choices == 'Entity Recognition (NER) Pipeline':
                                            "de_reidentify_entities": to_reidentify_
                                            }}, sort_keys=True)
                             response = client_sf.start_execution(
-                            stateMachineArn='arn:aws:states:us-east-1:165885578631:stateMachine:EntityRecognitionMachine',
+                            stateMachineArn='',
                             name=sf_name,
                             input= sf_input)
 

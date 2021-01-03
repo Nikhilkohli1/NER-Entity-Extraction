@@ -4,12 +4,12 @@
   "States": {
     "Named Entity Extraction": {
       "Type": "Task",
-      "Resource": "arn:aws:lambda:us-east-1:165885578631:function:IdentifyEntities",
+      "Resource": "",
       "Next": "Masking, Anonymization & Deidentification"
     },
     "Masking, Anonymization & Deidentification": {
       "Type": "Task",
-      "Resource": "arn:aws:lambda:us-east-1:165885578631:function:MaskEntities",
+      "Resource": "",
       "Next": "Reidentification Choice"
     },
     "Reidentification Choice": {
@@ -30,12 +30,12 @@
     },
     "Reidentification": {
       "Type": "Task",
-      "Resource": "arn:aws:lambda:us-east-1:165885578631:function:ReIdentifyEntities",
+      "Resource": "",
       "Next": "Final State"
     },
     "Final State": {
       "Type": "Task",
-      "Resource": "arn:aws:lambda:us-east-1:165885578631:function:FinalStep",
+      "Resource": "",
       "End": true
     }
   }
